@@ -1,4 +1,4 @@
-import java.util.Scanner;
+package src.week2;
 
 public class Fibonacci {
   private static long calc_fib(int n) {

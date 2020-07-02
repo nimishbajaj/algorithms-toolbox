@@ -1,3 +1,5 @@
+package src.week2;
+
 import java.util.*;
 
 public class FibonacciSumSquares {
