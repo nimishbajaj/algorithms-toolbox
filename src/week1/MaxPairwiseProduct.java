@@ -8,17 +8,17 @@ public class MaxPairwiseProduct {
         int n = numbers.length;
         int max1 = 0, max2 = 0;
 
-        for(int x: numbers){
-            if(x>max1){
+        for (int x : numbers) {
+            if (x > max1) {
                 max2 = max1;
                 max1 = x;
-            } else if(x>max2){
+            } else if (x > max2) {
                 max2 = x;
             }
         }
 
         //System.out.println(max1 + " " + max2);
-        return (long)max1*max2;
+        return (long) max1 * max2;
     }
 
     public static void main(String[] args) {
@@ -38,7 +38,7 @@ public class MaxPairwiseProduct {
         FastScanner(InputStream stream) {
             try {
                 br = new BufferedReader(new
-                    InputStreamReader(stream));
+                        InputStreamReader(stream));
             } catch (Exception e) {
                 e.printStackTrace();
             }

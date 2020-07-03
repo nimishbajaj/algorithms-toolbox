@@ -7,7 +7,7 @@ public class FibonacciPartialSum {
         long sum = 0;
 
         long current = 0;
-        long next  = 1;
+        long next = 1;
 
         for (long i = 0; i <= to; ++i) {
             if (i >= from) {
@@ -16,7 +16,7 @@ public class FibonacciPartialSum {
             }
 
             long new_current = next;
-            next = (next + current)%10;
+            next = (next + current) % 10;
             current = new_current;
         }
 
@@ -24,23 +24,23 @@ public class FibonacciPartialSum {
     }
 
     private static long getFibonacciSum(long from, long n) {
-        n = n%60;
+        n = n % 60;
         if (n == 0)
             return 0;
 
-        long previous = from==0?0:getLastDigit(from-1);
-        long current  = from==0?1:getLastDigit(from);
+        long previous = from == 0 ? 0 : getLastDigit(from - 1);
+        long current = from == 0 ? 1 : getLastDigit(from);
         long sum = current;
 
-        if(from==0) n--;
+        if (from == 0) n--;
 
 //        System.out.println(previous + " " + current + " " + sum + " ");
 
         for (long i = 0; i < n - 1; ++i) {
             long tmp_previous = previous;
             previous = current;
-            current = (tmp_previous + current)%10;
-            sum = (sum + current)%10;
+            current = (tmp_previous + current) % 10;
+            sum = (sum + current) % 10;
 //            System.out.println(current + " " + sum + " ");
         }
 
@@ -49,26 +49,26 @@ public class FibonacciPartialSum {
     }
 
     private static long getLastDigit(long n) {
-        n = n%60;
+        n = n % 60;
         if (n <= 1)
-            return Math.max(n,0);
+            return Math.max(n, 0);
         long previous = 0;
-        long current  = 1;
+        long current = 1;
 
         for (long i = 0; i < n - 1; ++i) {
             long tmp_previous = previous;
             previous = current;
-            current = (tmp_previous + current)%10;
+            current = (tmp_previous + current) % 10;
         }
         return current;
     }
 
-    
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         long from = scanner.nextLong();
         long to = scanner.nextLong();
-        if(from==0) from++;
+        if (from == 0) from++;
 
 //        int factor = 10000;
 //        for(int i=0;i<10000;i++){
@@ -85,7 +85,7 @@ public class FibonacciPartialSum {
 //            }
 //
 //        }
-        long result = getFibonacciSum(from, to-from+1);
+        long result = getFibonacciSum(from, to - from + 1);
         System.out.println(result);
     }
 }

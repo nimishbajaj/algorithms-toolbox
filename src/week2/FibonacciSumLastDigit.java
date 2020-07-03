@@ -8,14 +8,14 @@ public class FibonacciSumLastDigit {
             return n;
 
         long previous = 0;
-        long current  = 1;
-        long sum      = 1;
+        long current = 1;
+        long sum = 1;
 
         for (long i = 0; i < n - 1; ++i) {
             long tmp_previous = previous;
             previous = current;
-            current = (tmp_previous + current)%10;
-            sum = (sum + current)%10;
+            current = (tmp_previous + current) % 10;
+            sum = (sum + current) % 10;
         }
 
         return sum % 10;
@@ -23,19 +23,19 @@ public class FibonacciSumLastDigit {
 
 
     private static long getFibonacciSum(long n) {
-        n = n%60;
+        n = n % 60;
         if (n <= 1)
             return n;
 
         long previous = 0;
-        long current  = 1;
-        long sum      = 1;
+        long current = 1;
+        long sum = 1;
 
         for (long i = 0; i < n - 1; ++i) {
             long tmp_previous = previous;
             previous = current;
-            current = (tmp_previous + current)%10;
-            sum = (sum + current)%10;
+            current = (tmp_previous + current) % 10;
+            sum = (sum + current) % 10;
 //            System.out.print(sum%10 + " ");
         }
 

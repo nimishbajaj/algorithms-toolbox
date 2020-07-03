@@ -21,10 +21,10 @@ public class FractionalKnapsack {
         double value = 0;
         Item[] items = sortedItems(weights, values);
 
-        for(Item item: items){
-            if(capacity==0) break;
+        for (Item item : items) {
+            if (capacity == 0) break;
             int amount = Math.min(item.weight, capacity);
-            value += amount*item.vtow;
+            value += amount * item.vtow;
             capacity -= amount;
         }
 
@@ -33,8 +33,8 @@ public class FractionalKnapsack {
 
     private static Item[] sortedItems(int[] weights, int[] values) {
         Item[] items = new Item[weights.length];
-        for(int i=0;i<weights.length;i++){
-            items[i] = new Item(weights[i], values[i], (double)values[i]/weights[i]);
+        for (int i = 0; i < weights.length; i++) {
+            items[i] = new Item(weights[i], values[i], (double) values[i] / weights[i]);
         }
         Arrays.sort(items, new Comparator<Item>() {
             @Override
@@ -56,6 +56,6 @@ public class FractionalKnapsack {
             values[i] = scanner.nextInt();
             weights[i] = scanner.nextInt();
         }
-        System.out.printf("%3f",getOptimalValue(capacity, values, weights));
+        System.out.printf("%3f", getOptimalValue(capacity, values, weights));
     }
 } 

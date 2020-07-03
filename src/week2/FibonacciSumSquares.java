@@ -8,41 +8,41 @@ public class FibonacciSumSquares {
             return n;
 
         long previous = 0;
-        long current  = 1;
-        long sum      = 1;
+        long current = 1;
+        long sum = 1;
 
-        for (long i = 0; i < n-1; ++i) {
+        for (long i = 0; i < n - 1; ++i) {
             long tmp_previous = previous;
             previous = current;
-            current = (tmp_previous + current)%10;
-            sum = (sum + current * current)%10;
+            current = (tmp_previous + current) % 10;
+            sum = (sum + current * current) % 10;
         }
 
         return sum % 10;
     }
 
     private static long getFibonacciSumSquares(long n) {
-        n%=30;
+        n %= 30;
         if (n <= 1)
             return n;
 
         long previous = 0;
-        long current  = 1;
-        long sum      = 1;
+        long current = 1;
+        long sum = 1;
 
 //        System.out.print(previous + " " +  current + " ");
 
         for (long i = 2; i <= n; ++i) {
             long tmp_previous = previous;
             previous = current;
-            current = (tmp_previous + current)%10;
-            sum = (sum + current * current)%10;
+            current = (tmp_previous + current) % 10;
+            sum = (sum + current * current) % 10;
 //            System.out.print(sum + " ");
         }
 
         return sum % 10;
     }
-    
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         long n = scanner.nextLong();

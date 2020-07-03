@@ -8,7 +8,7 @@ public class FibonacciLastDigit {
             return n;
 
         int previous = 0;
-        int current  = 1;
+        int current = 1;
 
         for (int i = 0; i < n - 1; ++i) {
             int tmp_previous = previous;
@@ -19,16 +19,16 @@ public class FibonacciLastDigit {
         return current % 10;
     }
 
-    private static int getFibonacciLastDigit(int n){
-        if(n<=1) return n;
+    private static int getFibonacciLastDigit(int n) {
+        if (n <= 1) return n;
 
         int previous = 0;
-        int current  = 1;
+        int current = 1;
 
         for (int i = 0; i < n - 1; ++i) {
             int tmp_previous = previous;
-            previous = current%10;
-            current = tmp_previous%10 + current%10;
+            previous = current % 10;
+            current = tmp_previous % 10 + current % 10;
         }
 
         return current % 10;
