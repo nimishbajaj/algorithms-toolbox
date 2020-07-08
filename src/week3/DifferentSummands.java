@@ -1,3 +1,5 @@
+package src.week3;
+
 import java.util.*;
 
 public class DifferentSummands {
