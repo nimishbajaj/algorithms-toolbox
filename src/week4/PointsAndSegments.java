@@ -1,3 +1,5 @@
+package src.week4;
+
 import java.util.*;
 
 public class PointsAndSegments {
